@@ -17,8 +17,9 @@ from django.conf.urls import url
 from PyBirdApp import views
 
 urlpatterns = [
+    url(r'^$', views.start, name='start'), #Accueil PyBird
     url(r'^home', views.home, name='home'), #Accueil PyBird
-    url(r'^$', views.home, name='home'), #Accueil PyBird
+    url(r'^signup/$', views.signup, name='signup'),
     url(r'^profile/(\d+)$', views.profile, name='profile'), #Page des post arg = id_user
     url(r'^followers/(\d+)$', views.followers, name='followers'), #Page des personnes qui suivent arg = id_user
     url(r'^followeds/(\d+)$', views.followeds, name='followeds'), #Page des que = id_user suit
