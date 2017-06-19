@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
 from PyBirdApp import views
 
 urlpatterns = [
-    url(r'^accueil$', views.home, name='home'), #Accueil PyBird
+    url(r'^home', views.home, name='home'), #Accueil PyBird
     url(r'^$', views.home, name='home'), #Accueil PyBird
-    url(r'^post/(\d+)$', views.view_post), #Page des post arg = id_user
+    url(r'^profile/(\d+)$', views.profile, name='profile'), #Page des post arg = id_user
+    url(r'^followers/(\d+)$', views.followers, name='followers'), #Page des personnes qui suivent arg = id_user
+    url(r'^followeds/(\d+)$', views.followeds, name='followeds'), #Page des que = id_user suit
 ]
