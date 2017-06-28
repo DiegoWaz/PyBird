@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'PyBirdApp'
+    'PyBirdApp',
+    'require'
+                  
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
+
+    
+STATICFILES_STORAGE = 'require.storage.OptimizedCachedStaticFilesStorage'
+REQUIRE_BASE_URL = 'js'
+REQUIRE_BUILD_PROFILE = 'app.build.js'
+REQUIRE_JS = os.path.join('src', 'require.js')
+REQUIRE_ENVIRONMENT = 'node'
+
+

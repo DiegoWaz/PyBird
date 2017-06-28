@@ -1,0 +1,67 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-card {
+    padding: 2px 16px;
+}
+
+/*
+    Profil
+ */
+
+
+.profil_avatar {
+    width:250px;
+    height:250px;
+    float:left;
+    border-radius:50%;
+    margin-right:25px;
+}
+
+.avatar_header {
+    width:25px;
+    height:25px;
+    float:left;
+    border-radius:50%;
+    margin-right:25px;
+}
+
+.avatar_post {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    margin-right:25px;
+}
+
+.profil_avatar_home {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    margin-left: 39px;
+}
+
+.profil_stats {
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+
+}
+
+h3.profil_stats {
+    vertical-align: top;
+}
+
+textarea {
+    width:100%;
+    max-height: 100px;
+}
+
+.center {
+    text-align: center;
+}

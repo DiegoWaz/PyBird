@@ -1,71 +1,140 @@
 {% load static %}
+{% load require %}
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/cutsom.min.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/cutsom.min.css' %}"> -->
     <title>{% block title %}PyBird{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'fonts/icons/fontawesome/css/font-awesome.min.css'%}"/>
+    <link rel="stylesheet" href="{% static 'fonts/icons/sharehub/style.css'%}"/>
+
+    {% require_module 'app' %}
+
+    <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'vendor/magnificPopup/dist/magnific-popup.css'%}" type="text/css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="{% static 'vendor/datePicker/css/datepicker.css' %}"/>
+
 </head>
 <body>
-   {% block nav %}
-            <div class="bs-component">
-              <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{% url 'home' %}">PyBird</a>
-                  </div>
-
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
-                      <li><a href="{% url 'profile' 1 %}">profile</a></li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">One more separated link</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                      <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Settings</a></li>
-                    </ul>
-                  </div>
+{% block nav %}
+    <header>
+        <div class="sh-header">
+            <div class="container">
+                <h1>
+                    <a href="index.php" class="sh-logo">
+                        Pybird
+                    </a>
+                </h1>
+                <div class="sh-header__control">
+                    <a href="#" class="sh-header__btn-notification sh-btn-icon"><i class="icon-Notification"></i></a>
+                    <a href="#" class="sh-header__btn-comment sh-btn-icon"><i class="icon-Comment"></i></a>
                 </div>
-              </nav>
+                <div class="sh-user">
+                    <div class="sh-user__head">
+                        <p>3 New Notifications</p>
+                        <a href="#" class="sh-user__close sh-btn-icon"><i class="icon-Cancel"></i></a>
+                    </div>
+                    <div class="sh-user__content">
+                        <div>
+                            <div><a href="#"><img src="{% static 'fonts/icons/sharehub/svg/Badge_03.svg'%}" alt=""></a></div>
+                            <div>
+                                <div>New Badge Earned</div>
+                                <span>Get 1K upvotes on your post</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div><a href="#"><img src="{% static 'images/avatars/user-02.jpg' %}" alt=""></a></div>
+                            <div>
+                                <div>Life choices of my cat</div>
+                                <span>Earned <i class="icon-Upvote"></i> 210</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sh-user__footer">
+                        <a href="#" class="sh-comments__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-01.png'%}" alt=""></a>
+                        <div>
+                            <a href="#">bastion . </a>
+                            <span>1 hour ago</span>
+                            <p>Hey, how’s it going nathun?</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    require(['app'], function () {
+                        require(['modules/menu']);
+                    });
+                </script>
+                <div class="sh-header__search">
+                    <form action="#">
+                        <label>
+                            <input type="search" name="global-search" class="form-control" placeholder="Search Posts, hashtags, categories">
+                            <i class="icon-Search"></i>
+                        </label>
+                    </form>
+                </div>
+                <div class="sh-header__control">
+                    <a href="#" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
+                    <a href="#" class="sh-header__btn-upload sh-btn"><i class="icon-Comment"></i> Tweet</a>
+                </div>
+
+                <script>
+                    require(['app'], function () {
+                        require(['modules/userToggle']);
+                    });
+                </script>
             </div>
-     {% endblock %}
+        </div>
+
+        <div class="sh-upload">
+            <div class="sh-upload__head">
+                <form action="#"><input type="text" class="form-control ttg-border-none" placeholder="Paste URL or image link or add text here" /></form>
+            </div>
+            <div class="sh-upload__content">
+                <img src="{% static 'fonts/icons/sharehub/svg/Upload_graphic.svg'%}" alt="">
+                <p>Drag Images here or <a href="#" class="sh-btn">Browse</a> from your computer. </p>
+            </div>
+            <div class="sh-upload__footer">
+                <a href="#">
+                    <i class="icon-Make_a_meme"></i>
+                    <span>Make a meme</span>
+                </a>
+                <a href="#">
+                    <i class="icon-Upload_Image"></i>
+                    <span>Video to GIF</span>
+                </a>
+                <a href="#">
+                    <i class="icon-Video_to_GIF"></i>
+                    <span>Browse your uploads</span>
+                </a>
+            </div>
+        </div>
+        <script>
+            require(['app'], function () {
+                require(['modules/main']);
+                require(['modules/upload']);
+            });
+        </script>
+    </header>
+{% endblock %}
 
 
-   <div class="container">
-       {% block content %}{% endblock %}
-   </div>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
 
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'bootstrap-3.3.7-dist/js/custom.js' %}"></script>
-  <script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
 </html>
