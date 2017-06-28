@@ -1,7 +1,80 @@
 {% extends "PyBirdApp/base.html" %}
+{% load static %}
 {% block title %}PyBird | Profile {{ id_user }}{% endblock %}
 {% block content %}
-<div class="row col-md-5">
-    <h1>Page du profil #{{ id_user }}</h1>
-</div>
+
+    <div class="sh-head-user">
+        <div class="sh-head-user__content">
+            <div class="sh-head-user__image"><a href="#"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a></div>
+            <div class="sh-head-user__info">
+                <div class="sh-head-user__info-head">
+                    <div class="sh-head-user__name"><span>Diego</span> <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i></div>
+                    <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                </div>
+                <div class="sh-head-user__info-statistic">
+                    <div class="sh-btn-icon"><i class="icon-Post"></i><span>2,608</span></div>
+                    <div class="sh-btn-icon"><i class="icon-Followers"></i><span>12,547</span></div>
+                    <div class="sh-btn-icon"><i class="icon-Following"></i><span>238</span></div>
+                </div>
+                <p>Two fish are sitting in a tank. One looks over at the other and says: "Hey, do you know how to drive this thing?"</p>
+            </div>
+        </div>
+    </div>
+    <div class="sh-content-head">
+
+    </div>
+    <!--sections-->
+    <div class="row">
+        <!--section-->
+        <div class="sh-section__item col-lg-3">
+
+        </div>
+
+        <div class="sh-section__item col-lg-6">
+            <div class="sh-section">
+                <div class="sh-section__head">
+                    <a href="single_post.html" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                    <div>
+                        <a href="#" class="sh-section__name">Diego</a>
+                        <span class="sh-section__passed">2 hours ago</span>
+                    </div>
+                    <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+                </div>
+                <div class="sh-section__content">
+                    <p>Special beta pricing's almost over, don't miss out. Head to <a href="#">http://www.lemeilleurdupsg.com</a> to check it out & sign up. Don’t forget o subscribe.</p>
+                    <div class="sh-section__image">
+                        <a href="single_post.html"><img src="{% static 'images/microphone-1209816_1920.jpg'%}" alt=""></a>
+                    </div>
+                </div>
+                <div class="sh-section__footer">
+                    <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
+                    <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
+                    <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
+                </div>
+            </div>
+
+            <div class="sh-section">
+                <div class="sh-section__head">
+                    <a href="#" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-03.png'%}" alt=""></a>
+                    <div>
+                        <a href="#" class="sh-section__name">Robin</a>
+                        <span class="sh-section__passed">20 min ago</span>
+                    </div>
+                    <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+                </div>
+                <div class="sh-section__content">
+                    <p>About 4,000 years ago:</br>God: I shall create a great plague and every living thing on Earth will die!</br>Fish: *Winks at God and slips him a $20 note*</br>God: Correction, I shall create a great flood!</p>
+                </div>
+                <div class="sh-section__footer">
+                    <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
+                    <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
+                    <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sh-section__item col-lg-4">
+
+        </div>
+    </div>
 {% endblock %}
