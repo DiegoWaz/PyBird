@@ -8655,7 +8655,7 @@ select.form-control:focus {
 }
 @media only screen and (max-width: 1483px) {
   .sh-header__control {
-    width: calc(184px + 46px + 100px);
+    width: calc(14px + 30px + 100px);
   }
 }
 @media only screen and (max-width: 1210px) {

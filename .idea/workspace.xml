@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e422842f-394a-4624-9343-fbef4f16d898" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBird/settings.py" afterPath="$PROJECT_DIR$/PyBird/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html" afterPath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" afterPath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/start.html" afterPath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/start.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="$PROJECT_DIR$/static/css/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
@@ -80,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="7187" column="2" lean-forward="false" selection-start-line="7187" selection-start-column="2" selection-end-line="7187" selection-end-column="2" />
+            <state relative-caret-position="527">
+              <caret line="8657" column="36" lean-forward="false" selection-start-line="8657" selection-start-column="36" selection-end-line="8657" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -137,9 +132,9 @@
         <option value="$PROJECT_DIR$/static/css/style2.css" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/start.html" />
         <option value="$PROJECT_DIR$/static/js/app.js" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -768,14 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="7187" column="2" lean-forward="false" selection-start-line="7187" selection-start-column="2" selection-end-line="7187" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PyBirdApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -812,6 +799,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="82" column="136" lean-forward="false" selection-start-line="82" selection-start-column="136" selection-end-line="82" selection-end-column="136" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="8657" column="36" lean-forward="false" selection-start-line="8657" selection-start-column="36" selection-end-line="8657" selection-end-column="36" />
           <folding />
         </state>
       </provider>
