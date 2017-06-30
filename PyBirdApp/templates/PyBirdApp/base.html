@@ -7,16 +7,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/cutsom.min.css' %}"> -->
     <title>{% block title %}PyBird{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'fonts/icons/fontawesome/css/font-awesome.min.css'%}"/>
     <link rel="stylesheet" href="{% static 'fonts/icons/sharehub/style.css'%}"/>
-
     {% require_module 'app' %}
-
     <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
-
     <link rel="stylesheet" href="{% static 'vendor/magnificPopup/dist/magnific-popup.css'%}" type="text/css" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -86,7 +81,7 @@
                     </form>
                 </div>
                 <div class="sh-header__control">
-                    <a href="#" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
+                    <a href="/profile/1" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
                     <a href="#" class="sh-header__btn-upload sh-btn"><i class="icon-Comment"></i> Tweet</a>
                 </div>
 
@@ -100,7 +95,9 @@
 
         <div class="sh-upload">
             <div class="sh-upload__head">
-                <form action="#"><input type="text" class="form-control ttg-border-none" placeholder="Paste URL or image link or add text here" /></form>
+                <form action="#">
+                    <input type="text" class="form-control form-message ttg-border-none" placeholder="Tweeter" />
+                </form>
             </div>
             <div class="sh-upload__content">
                 <img src="{% static 'fonts/icons/sharehub/svg/Upload_graphic.svg'%}" alt="">

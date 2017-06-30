@@ -12,7 +12,30 @@
 <div class="row">
     <!--section-->
     <div class="sh-section__item col-lg-3">
-
+        <div class="sh-section">
+            <div class="sh-section__head">
+                <a href="single_post.html" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                <div>
+                    <h2>
+                        <a href="#" class="sh-section__name">Diego</a>
+                    </h2>
+                </div>
+            </div>
+            <div class="sh-section__content sh-head-user__info-statistic">
+                <table>
+                    <tr>
+                        <td><div class="sh-btn-icon"><i class="icon-Comment"></i></div></td>
+                        <td><div class="sh-btn-icon"><i class="icon-Followers"></i></div></td>
+                        <td><div class="sh-btn-icon"><i class="icon-Following"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="sh-btn-icon"><span>2,608</span></div></td>
+                        <td><div class="sh-btn-icon"><span>12,547</span></div></td>
+                        <td><div class="sh-btn-icon"><span>238</span></div></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="sh-section__item col-lg-6">
@@ -23,7 +46,6 @@
                     <a href="#" class="sh-section__name">Diego</a>
                     <span class="sh-section__passed">2 hours ago</span>
                 </div>
-                <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
             </div>
             <div class="sh-section__content">
                 <p>Special beta pricing's almost over, don't miss out. Head to <a href="#">http://www.lemeilleurdupsg.com</a> to check it out & sign up. Don’t forget o subscribe.</p>
@@ -45,7 +67,6 @@
                     <a href="#" class="sh-section__name">Robin</a>
                     <span class="sh-section__passed">20 min ago</span>
                 </div>
-                <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
             </div>
             <div class="sh-section__content">
                 <p>About 4,000 years ago:</br>God: I shall create a great plague and every living thing on Earth will die!</br>Fish: *Winks at God and slips him a $20 note*</br>God: Correction, I shall create a great flood!</p>
@@ -58,8 +79,35 @@
         </div>
     </div>
 
-    <div class="sh-section__item col-lg-4">
-
+    <div class="sh-section__item col-lg-3">
+        <div class="sh-section">
+            <div class="sh-section__head">
+                <table>
+                    <tr class="sh-suggest">
+                        <td>
+                            <a href="#" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
+                        </td>
+                        <td>
+                            <a href="#" class="sh-section__name">Sergei</a>
+                        </td>
+                        <td>
+                            <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="#" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
+                        </td>
+                        <td>
+                            <a href="#" class="sh-section__name">Sergei</a>
+                        </td>
+                        <td>
+                            <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
