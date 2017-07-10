@@ -1,0 +1,10 @@
+<title>{% block title %}Login{% endblock %}</title>
+
+{% block content %}
+<form method="post">
+{% csrf_token %}
+    <input type="text" name="username" placeholder="Utilisateur">
+    <input type="password" name="password" placeholder="Mot de passe">
+    <input type="submit" value="login" />
+</form>
+{% endblock %}

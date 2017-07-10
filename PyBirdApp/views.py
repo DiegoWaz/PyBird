@@ -14,6 +14,17 @@ from django.contrib.auth.decorators import login_required
 def start(request):
     return render(request, 'PyBirdApp/start.html', {'date': datetime.now()})
 
+def user_login(request):
+    if request.method == 'POST':
+            username = request.POST.get('username', False)
+            password = request.POST.get('password', False)
+            user = authenticate(username=username, password=password)
+            if user is not None and user.is_active:
+                login(request, user)
+                return redirect('home')
+
+    return render(request, 'PyBirdApp/registration/login.html')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -26,7 +37,13 @@ def signup(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'PyBirdApp/signup.html', {'form': form})
+    return render(request, 'PyBirdApp/registration/signup.html', {'form': form})
+
+
+def user_logout(request):
+    logout(request)
+
+    return redirect('home')
 
 def home(request):
     return render(request, 'PyBirdApp/index.html', {'date': datetime.now()})
@@ -53,41 +70,4 @@ def followers(request, id_user):
 def followeds(request, id_user):
     return render(request, 'PyBirdApp/followeds.html', {'id_user': id_user})
 
-def logout_view(request):
-    logout(request)
-    return HttpResponseRedirect('PyBirdApp/login')
 
-def user_login(request):
-    # Like before, obtain the context for the user's request.
-    context = RequestContext(request)
-
-    # If the request is a HTTP POST, try to pull out the relevant information.
-    if request.method == 'POST':
-        # Gather the username and password provided by the user.
-        # This information is obtained from the login form.
-        username = request.POST['username']
-        password = request.POST['password']
-
-        # Use Django's machinery to attempt to see if the username/password
-        # combination is valid - a User object is returned if it is.
-        user = authenticate(username=username, password=password)
-
-        # If we have a User object, the details are correct.
-        # If None (Python's way of representing the absence of a value), no user
-        # with matching credentials was found.
-        if user:
-            # Is the account active? It could have been disabled.
-            if user.is_active:
-                # If the account is valid and active, we can log the user in.
-                # We'll send the user back to the homepage.
-                login(request, user)
-                return HttpResponseRedirect('PyBirdApp/home')
-            else:
-                # An inactive account was used - no logging in!
-                return HttpResponse("Your account is disabled.")
-        else:
-            return HttpResponse("Invalid login details supplied.")
-    else:
-        # No context variables to pass to the template system, hence the
-        # blank dictionary object...
-        return redirect('PyBirdApp/singup.html', {}, context)
