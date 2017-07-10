@@ -15,12 +15,25 @@ Including another URLconf
 """
 from django.conf.urls import url
 from PyBirdApp import views
+from django.contrib.auth.views import logout
+
 
 urlpatterns = [
     url(r'^$', views.start, name='start'), #Accueil PyBird
     url(r'^home', views.home, name='home'), #Accueil PyBird
+
     url(r'^signup/$', views.signup, name='signup'),
+
+    #url(r'^logout/$', views.logout, name='logout'),
+    url(r'^logout/$', views.logout_view, name='logout'),
+    url(r'^settings/$', views.settings, name='settings'),
+
     url(r'^profile/(\d+)$', views.profile, name='profile'), #Page des post arg = id_user
     url(r'^followers/(\d+)$', views.followers, name='followers'), #Page des personnes qui suivent arg = id_user
     url(r'^followeds/(\d+)$', views.followeds, name='followeds'), #Page des que = id_user suit
+    url(r'^logout', views.logout, name='logout'), #Page des que = id_user suit
+
+    url(r'^login/$', views.user_login, name='login'),
+
+
 ]

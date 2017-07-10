@@ -6473,6 +6473,9 @@ select.form-control:focus {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
+
+
+
 .sh-btn {
   height: 38px;
   padding-left: 12px;
@@ -6512,6 +6515,47 @@ select.form-control:focus {
 .sh-btn:hover i {
   color: #3482e2;
 }
+
+.set-btn {
+  height: 38px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: red;
+  font-weight: 300;
+  border-radius: 6px;
+  border: solid 2px red;
+  align-items: center;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.set-btn i {
+  margin-right: 12px;
+}
+.set-btn,
+.set-btn i {
+  color: #ffffff;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+}
+.set-btn:visited,
+.set-btn:active,
+.set-btn:link,
+.set-btn:visited i,
+.set-btn:active i,
+.set-btn:link i {
+  color: #ffffff;
+}
+.set-btn:hover {
+  background-color: #ffffff;
+}
+.set-btn:hover,
+.set-btn:hover i {
+  color: red;
+}
+
 .sh-btn-icon {
   align-items: center;
   display: -moz-inline-box;

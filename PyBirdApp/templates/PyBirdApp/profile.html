@@ -9,8 +9,10 @@
             <div class="sh-head-user__image"><a href="#"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a></div>
             <div class="sh-head-user__info">
                 <div class="sh-head-user__info-head">
-                    <div class="sh-head-user__name"><span>Diego</span> <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i></div>
+                    {% for user in this_user %}
+                    <div class="sh-head-user__name"><span>{{ user.username }}</span> <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i></div>
                     <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                    {% endfor %}
                 </div>
                 <div class="sh-head-user__info-statistic">
                     <div class="sh-btn-icon"><i class="icon-Post"></i><span>2,608</span></div>

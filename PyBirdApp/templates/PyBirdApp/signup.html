@@ -3,4 +3,6 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign up</button>
+    <p>Already an account ? 
+                    <a href="{% url 'login' %}" class=" sh-btn"><i class="icon-Comment"></i> Log in</a></p>
   </form>

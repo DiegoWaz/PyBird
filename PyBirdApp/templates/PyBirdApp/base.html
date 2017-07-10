@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>{% block title %}PyBird{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'fonts/icons/fontawesome/css/font-awesome.min.css'%}"/>
+    <title>{% block title %}PyBird{% endblock %}</title>    
     <link rel="stylesheet" href="{% static 'fonts/icons/sharehub/style.css'%}"/>
+    <link rel="stylesheet" href="{% static 'fonts/icons/fontawesome/css/font-awesome.min.css'%}"/>
     {% require_module 'app' %}
     <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'vendor/magnificPopup/dist/magnific-popup.css'%}" type="text/css" />
@@ -25,12 +25,13 @@
 </head>
 <body>
 {% block nav %}
+           {% if user.is_authenticated %}
     <header>
         <div class="sh-header">
             <div class="container">
                 <h1>
-                    <a href="index.php" class="sh-logo">
-                        Pybird
+                    <a href="{% url 'home' %}" class="sh-logo">
+                        PyBird
                     </a>
                 </h1>
                 <div class="sh-header__control">
@@ -81,49 +82,35 @@
                     </form>
                 </div>
                 <div class="sh-header__control">
-                    <a href="/profile/1" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
+                    <a href="{% url 'profile' user.id %}" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
                     <a href="#" class="sh-header__btn-upload sh-btn"><i class="icon-Comment"></i> Tweet</a>
+                    <a href="{% url 'logout' %}" class="set-btn"><i class="icon-Comment"></i> Logout</a>
+                </div>
+                
+        {% else %}
+        
+      <header>
+        <div class="sh-header">
+            <div class="container">
+                <h1>
+                    <a href="{% url 'home' %}" class="sh-logo">
+                        PyBird
+                    </a>
+                </h1>
+                <div class="sh-header__search">
+                    <form action="#">
+                        <label>
+                            <input type="search" name="global-search" class="form-control" placeholder="Search Posts, hashtags, categories">
+                            <i class="icon-Search"></i>
+                        </label>
+                    </form>
+                </div>
+                <div class="sh-header__control">
+                    <a href="{% url 'signup' %}" class=" sh-btn"><i class="icon-Comment"></i> Register</a>
+                    <a href="{% url 'login' %}" class="set-btn"><i class="icon-Comment"></i> Login</a>
                 </div>
 
-                <script>
-                    require(['app'], function () {
-                        require(['modules/userToggle']);
-                    });
-                </script>
-            </div>
-        </div>
-
-        <div class="sh-upload">
-            <div class="sh-upload__head">
-                <form action="#">
-                    <input type="text" class="form-control form-message ttg-border-none" placeholder="Tweeter" />
-                </form>
-            </div>
-            <div class="sh-upload__content">
-                <img src="{% static 'fonts/icons/sharehub/svg/Upload_graphic.svg'%}" alt="">
-                <p>Drag Images here or <a href="#" class="sh-btn">Browse</a> from your computer. </p>
-            </div>
-            <div class="sh-upload__footer">
-                <a href="#">
-                    <i class="icon-Make_a_meme"></i>
-                    <span>Make a meme</span>
-                </a>
-                <a href="#">
-                    <i class="icon-Upload_Image"></i>
-                    <span>Video to GIF</span>
-                </a>
-                <a href="#">
-                    <i class="icon-Video_to_GIF"></i>
-                    <span>Browse your uploads</span>
-                </a>
-            </div>
-        </div>
-        <script>
-            require(['app'], function () {
-                require(['modules/main']);
-                require(['modules/upload']);
-            });
-        </script>
+        {% endif %}
     </header>
 {% endblock %}
 
