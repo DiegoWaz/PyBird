@@ -18,7 +18,7 @@
                 <a href="single_post.html" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
                 <div>
                     <h2>
-                        <a href="#" class="sh-section__name">{{ user }}</a>
+                        <a href="{% url 'profile' user.id %}" class="sh-section__name">{{ user }}</a>
                     </h2>
                 </div>
             </div>
@@ -96,9 +96,13 @@
                             <td>
                                 <a href="{% url 'profile' user.id %}" class="sh-section__name">{{ user.username }}</a>
                             </td>
-                            <td>
-                                <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
-                            </td>
+                            {% for userFollowed in listFollowed %}
+                                {% if userFollowed.id == user.id %}
+                                    <td>
+                                        <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                                    </td>
+                                {% endif %}
+                            {% endfor %}
                         </tr>
                     {% endif %}
         {% endfor %}

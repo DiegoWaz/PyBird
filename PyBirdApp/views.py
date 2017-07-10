@@ -46,17 +46,19 @@ def user_logout(request):
     return redirect('home')
 
 def home(request):
-    nbpost, nbfollower, nbfollowed = 0, 0, 0
+    nbpost, nbfollower, nbfollowed, listFollowed = 0, 0, 0, 0
+
 
     if(request.user.is_authenticated()):
         nbpost = Post.objects.filter(id_author=request.user.id).count()
         nbfollower = Follow.objects.filter(id_followed=request.user.id).count()
         nbfollowed = Follow.objects.filter(id_follower=request.user.id).count()
+        listFollowed = Follow.objects.filter(id_follower=request.user.id).all()
 
     list_user = User.objects.all()
 
     return render(request, 'PyBirdApp/index.html', {'nbpost': nbpost, 'nbfollower': nbfollower, 'nbfollowed': nbfollowed,
-                                                    'list_user': list_user})
+                                                    'list_user': list_user, 'listFollowed': listFollowed})
 
 def settings(request):
     if not request.user.is_authenticated: #Si l'user n'est pas authentifié
@@ -73,25 +75,27 @@ def profile(request, id_user):
     if not user:
         raise Http404 #Pour renvoyer une erreur 404
 
-    if(request.user.id == id_user):
-        myPage = 1
-    else:
-        myPage = 0
 
-    return render(request, 'PyBirdApp/profile.html', {'id_user': id_user, 'this_user': user, 'nbpost': nbpost, 'myPage': myPage,
+    return render(request, 'PyBirdApp/profile.html', {'id_user': id_user, 'this_user': user, 'nbpost': nbpost,
                                                       'nbfollower': nbfollower, 'nbfollowed': nbfollowed})
 
 
 def followers(request, id_user):
-    return render(request, 'PyBirdApp/followers.html', {'id_user': id_user})
+    followerss = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).all()
+    #recuperer les infos des mans a partir des id
+    return render(request, 'PyBirdApp/followers.html', {'id_user': id_user, 'followers': followerss})
 
 def follow(request, id_user):
     follow = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).count()
 
-    if follow < 0:
+    if follow == 0:
+        f = Follow.objects.create(id_follower=request.user.id, id_followed=id_user)
+        f.save()
+
+    if follow == 1:
         return redirect("http://google.com")
 
-    return render(request, 'PyBirdApp/followers.html', {'id_user': id_user})
+    return render(request, 'PyBirdApp/follow.html', {'id_user': id_user, 'follow': follow, 'request_id': request.user.id})
 
 def followeds(request, id_user):
     return render(request, 'PyBirdApp/followeds.html', {'id_user': id_user})

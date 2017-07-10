@@ -11,15 +11,12 @@
                 <div class="sh-head-user__info-head">
                     {% for user in this_user %}
                     <div class="sh-head-user__name"><span>{{ user.username }}</span>
-                        {% if request.user.id == id_user %}
-                        {% else %}
-                        <p>id_user {{ id_user }} != {{ request.user.id }} </p>
-                        <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i>
+                        {% if request.user.username != user.username %}
+                            <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i>
                         {% endif %}
                     </div>
-                        {% if id_user == request.user.id %}
-                        {% else %}
-                            <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                        {% if request.user.username != user.username %}
+                            <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
                         {% endif %}
                     {% endfor %}
                 </div>

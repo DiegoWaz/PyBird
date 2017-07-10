@@ -3,6 +3,11 @@
 {% block nav %}{% endblock %} <!-- Remplace la nav par du vide -->
 {% block content %}
 <div class="row col-md-5">
-    <h1>Followers de #{{ id_user }}</h1>
+    <h1>Followers de #{{ id_user }}</h1><br>
+    <ul>
+        {% for user in followers %}
+            <li>{{ user.id }}</li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}

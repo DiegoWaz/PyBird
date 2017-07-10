@@ -12,7 +12,7 @@ class Profile(models.Model):
     avatar = models.TextField(max_length=500, default="default.jpg")
 
 class Post(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     post_content = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="created")
     updated_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="updated")
@@ -22,12 +22,8 @@ class Post(models.Model):
         return self.id
 
 class Follow(models.Model):
-    id = models.IntegerField(primary_key=True)
     id_follower = models.IntegerField()
     id_followed = models.IntegerField()
-    post_content = models.CharField(max_length=500)
-    created_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="created")
-    updated_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="updated")
 
     def __str__(self):
         return self.id
