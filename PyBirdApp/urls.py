@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^settings/$', views.settings, name='settings'),
 
     url(r'^profile/(\d+)$', views.profile, name='profile'), #Page des post arg = id_user
+    url(r'^follow/(\d+)$', views.follow, name='follow'), #Page des post arg = id_user
     url(r'^followers/(\d+)$', views.followers, name='followers'), #Page des personnes qui suivent arg = id_user
     url(r'^followeds/(\d+)$', views.followeds, name='followeds'), #Page des que = id_user suit
 

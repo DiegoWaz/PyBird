@@ -10,14 +10,25 @@
             <div class="sh-head-user__info">
                 <div class="sh-head-user__info-head">
                     {% for user in this_user %}
-                    <div class="sh-head-user__name"><span>{{ user.username }}</span> <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i></div>
-                    <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                    <div class="sh-head-user__name"><span>{{ user.username }}</span>
+                        {% if request.user.id == id_user %}
+                        {% else %}
+                        <p>id_user {{ id_user }} != {{ request.user.id }} </p>
+                        <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i>
+                        {% endif %}
+                    </div>
+                        {% if id_user == request.user.id %}
+                        {% else %}
+                            <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                        {% endif %}
                     {% endfor %}
                 </div>
                 <div class="sh-head-user__info-statistic">
-                    <div class="sh-btn-icon"><i class="icon-Post"></i><span>2,608</span></div>
-                    <div class="sh-btn-icon"><i class="icon-Followers"></i><span>12,547</span></div>
-                    <div class="sh-btn-icon"><i class="icon-Following"></i><span>238</span></div>
+                    <div class="sh-btn-icon"><i class="icon-Post"></i><span>{{ nbpost }}</span></div>
+                    <div class="sh-btn-icon"><i class="icon-Followers"></i><span><a href="{% url 'followers' id_user %}"
+                    style="text-decoration: none;"> {{ nbfollower }}</a></span></div>
+                    <div class="sh-btn-icon"><i class="icon-Following"></i><span><a href="{% url 'followeds' id_user %}">
+                        {{ nbfollowed }}</a></span></div>
                 </div>
                 <p>Two fish are sitting in a tank. One looks over at the other and says: "Hey, do you know how to drive this thing?"</p>
             </div>

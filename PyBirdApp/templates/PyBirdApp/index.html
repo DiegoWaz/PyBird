@@ -30,9 +30,9 @@
                         <td><div class="sh-btn-icon"><i class="icon-Following"></i></div></td>
                     </tr>
                     <tr>
-                        <td><div class="sh-btn-icon"><span>2,608</span></div></td>
-                        <td><div class="sh-btn-icon"><span>12,547</span></div></td>
-                        <td><div class="sh-btn-icon"><span>238</span></div></td>
+                        <td><div class="sh-btn-icon"><span>{{ nbpost }}</span></div></td>
+                        <td><div class="sh-btn-icon"><span>{{ nbfollower }}</span></div></td>
+                        <td><div class="sh-btn-icon"><span>{{ nbfollowed }}</span></div></td>
                     </tr>
                 </table>
             </div>
@@ -83,36 +83,29 @@
     </div>
 
     <div class="sh-section__item col-lg-3">
-        {% if user.is_authenticated %}
+       <!-- {% if user.is_authenticated %} -->
         <div class="sh-section">
             <div class="sh-section__head">
                 <table>
-                    <tr class="sh-suggest">
-                        <td>
-                            <a href="#" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
-                        </td>
-                        <td>
-                            <a href="#" class="sh-section__name">Sergei</a>
-                        </td>
-                        <td>
-                            <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="#" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
-                        </td>
-                        <td>
-                            <a href="#" class="sh-section__name">Sergei</a>
-                        </td>
-                        <td>
-                            <a href="#" class="sh-head-user__btn-follow sh-btn">Follow</a>
-                        </td>
-                    </tr>
+        {% for user in list_user %}
+                    {% if request.user.username != user.username %}
+                        <tr class="sh-suggest">
+                            <td>
+                                <a href="{% url 'profile' user.id %}" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
+                            </td>
+                            <td>
+                                <a href="{% url 'profile' user.id %}" class="sh-section__name">{{ user.username }}</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+        {% endfor %}
                 </table>
             </div>
         </div>
-        {% endif %}
+        <!-- {% endif %} -->
     </div>
 </div>
 {% endblock %}

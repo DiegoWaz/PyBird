@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e422842f-394a-4624-9343-fbef4f16d898" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/signup.html" afterPath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/registration/signup.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/login.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/models.py" afterPath="$PROJECT_DIR$/PyBirdApp/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" afterPath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html" afterPath="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/urls.py" afterPath="$PROJECT_DIR$/PyBirdApp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyBirdApp/views.py" afterPath="$PROJECT_DIR$/PyBirdApp/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
@@ -21,48 +24,18 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="41" />
+            <state relative-caret-position="-912">
+              <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/registration/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/registration/signup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="114" column="19" lean-forward="false" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PyBirdApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state relative-caret-position="370">
+              <caret line="96" column="76" lean-forward="true" selection-start-line="96" selection-start-column="76" selection-end-line="96" selection-end-column="76" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -70,24 +43,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyBird/settings.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyBirdApp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="384">
+              <caret line="31" column="65" lean-forward="false" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+              <folding>
+                <element signature="e#640#672#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyBirdApp/urls.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyBirdApp/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
               <folding>
-                <element signature="e#640#672#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#span#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="92" column="32" lean-forward="false" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,22 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>import=</find>
-      <find>import:r</find>
-      <find>import:(</find>
-      <find>import:'</find>
-      <find>import:&quot;</find>
-      <find>import:</find>
-      <find>import*re</find>
-      <find>import*r</find>
-      <find>import*</find>
-      <find>impor</find>
-      <find>impo</find>
-      <find>i</find>
-      <find>Pyb</find>
-      <find>sh-header__control</find>
-      <find>.sh-header__control</find>
-      <find>icon-Comment</find>
       <find>.icon-Comment</find>
       <find>sh-header__btn-upload</find>
       <find>.sh-header__btn-upload</find>
@@ -134,6 +115,22 @@
       <find>profi</find>
       <find>profile</find>
       <find>MIDDLEWARE_C</find>
+      <find>INSTALLED</find>
+      <find>a</find>
+      <find>auth</find>
+      <find>authen</find>
+      <find>authent</find>
+      <find>authenti</find>
+      <find>authentic</find>
+      <find>authentica</find>
+      <find>authenticat</find>
+      <find>authenticate</find>
+      <find>authenticated</find>
+      <find>%</find>
+      <find>% ur</find>
+      <find>% url</find>
+      <find>2,6</find>
+      <find>save</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -148,8 +145,6 @@
         <option value="$PROJECT_DIR$/static/css/style2.css" />
         <option value="$PROJECT_DIR$/static/js/app.js" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/start.html" />
-        <option value="$PROJECT_DIR$/PyBirdApp/models.py" />
-        <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/settings.html" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/signin.html" />
@@ -159,11 +154,13 @@
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/registrer.html" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/login.html" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html" />
-        <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" />
         <option value="$PROJECT_DIR$/PyBird/settings.py" />
         <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/registration/login.html" />
+        <option value="$PROJECT_DIR$/PyBirdApp/models.py" />
         <option value="$PROJECT_DIR$/PyBirdApp/urls.py" />
         <option value="$PROJECT_DIR$/PyBirdApp/views.py" />
+        <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html" />
+        <option value="$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html" />
       </list>
     </option>
   </component>
@@ -455,7 +452,7 @@
     <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24593796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18906942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -779,16 +776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyBirdApp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/registrer.html" />
     <entry file="file://$PROJECT_DIR$/PyBirdApp/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -800,34 +787,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -847,24 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="114" column="19" lean-forward="false" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyBirdApp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#640#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PyBird/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -873,13 +819,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyBirdApp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="54" lean-forward="true" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-912">
+          <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyBirdApp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="31" column="65" lean-forward="false" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
+          <folding>
+            <element signature="e#640#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PyBirdApp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state relative-caret-position="370">
+          <caret line="96" column="76" lean-forward="true" selection-start-line="96" selection-start-column="76" selection-end-line="96" selection-end-column="76" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#span#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyBirdApp/templates/PyBirdApp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="92" column="32" lean-forward="false" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

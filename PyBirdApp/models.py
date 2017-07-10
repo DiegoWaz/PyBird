@@ -9,12 +9,14 @@ class Profile(models.Model):
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+    avatar = models.TextField(max_length=500, default="default.jpg")
 
 class Post(models.Model):
     id = models.IntegerField(primary_key=True)
     post_content = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="created")
     updated_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="updated")
+    id_author = models.ForeignKey(User)
 
     def __str__(self):
         return self.id
