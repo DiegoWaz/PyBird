@@ -12,11 +12,17 @@
                     {% for user in this_user %}
                     <div class="sh-head-user__name"><span>{{ user.username }}</span>
                         {% if request.user.username != user.username %}
-                            <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i>
+                            {% if isFollowed == 1 %}
+                                <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i>
+                            {% endif %}
                         {% endif %}
                     </div>
                         {% if request.user.username != user.username %}
-                            <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                            {% if isFollowed == 0 %}
+                                <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                            {% else %}
+                                <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Unfollow</a>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>
@@ -44,7 +50,7 @@
         <div class="sh-section__item col-lg-6">
             <div class="sh-section">
                 <div class="sh-section__head">
-                    <a href="single_post.html" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                    <a href="" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
                     <div>
                         <a href="#" class="sh-section__name">Diego</a>
                         <span class="sh-section__passed">2 hours ago</span>

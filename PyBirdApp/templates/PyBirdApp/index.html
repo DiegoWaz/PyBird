@@ -31,8 +31,8 @@
                     </tr>
                     <tr>
                         <td><div class="sh-btn-icon"><span>{{ nbpost }}</span></div></td>
-                        <td><div class="sh-btn-icon"><span>{{ nbfollower }}</span></div></td>
-                        <td><div class="sh-btn-icon"><span>{{ nbfollowed }}</span></div></td>
+                        <td><div class="sh-btn-icon"><span><a href="{% url 'followers' user.id %}">{{ nbfollower }}</a></span></div></td>
+                        <td><div class="sh-btn-icon"><span><a href="{% url 'followeds' user.id %}">{{ nbfollowed }}</a></span></div></td>
                     </tr>
                 </table>
             </div>
@@ -87,18 +87,19 @@
         <div class="sh-section">
             <div class="sh-section__head">
                 <table>
-        {% for user in list_user %}
-                    {% if request.user.username != user.username %}
+        {% for user_all in list_user %}
+                    {% if request.user.username != user_all.username %}
                         <tr class="sh-suggest">
                             <td>
-                                <a href="{% url 'profile' user.id %}" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
+                                <a href="{% url 'profile' user_all.id %}" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
                             </td>
                             <td>
-                                <a href="{% url 'profile' user.id %}" class="sh-section__name">{{ user.username }}</a>
+                                <a href="{% url 'profile' user_all.id %}" class="sh-section__name">{{ user_all.username }}</a>
                             </td>
                             {% for userFollowed in listFollowed %}
-                                {% if userFollowed.id == user.id %}
+                                {% if userFollowed.id != user_all.id %}
                                     <td>
+                                        {{ userFollowed.id }} && {{ user_all.id }}
                                         <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
                                     </td>
                                 {% endif %}

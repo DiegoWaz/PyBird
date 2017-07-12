@@ -1,12 +1,14 @@
 {% extends "PyBirdApp/base.html" %}
-{% block title %}PyBird | Profile {{ id_user }}{% endblock %}
+{% block title %}PyBird | Followers of {{ id_user }}{% endblock %}
 {% block nav %}{% endblock %} <!-- Remplace la nav par du vide -->
 {% block content %}
 <div class="row col-md-5">
-    <h1>Followers de #{{ id_user }}</h1><br>
+    {% for u in this_user %}
+        <h1>Followers de #{{ u.username }}</h1><br>
+    {% endfor %}
     <ul>
-        {% for user in followers %}
-            <li>{{ user.id }}</li>
+        {% for uFollowers in followers %}
+        <li><a href="{% url 'profile' uFollowers.id %}">{{ uFollowers.id }}</a></li>
         {% endfor %}
     </ul>
 </div>
