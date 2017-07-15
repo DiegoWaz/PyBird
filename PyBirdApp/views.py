@@ -53,9 +53,11 @@ def home(request):
         nbpost = Post.objects.filter(id_author=request.user.id).count()
         nbfollower = Follow.objects.filter(id_followed=request.user.id).count()
         nbfollowed = Follow.objects.filter(id_follower=request.user.id).count()
-        listFollowed = Follow.objects.filter(id_followed=request.user.id).all()
+        listFollowed = Follow.objects.filter(id_follower=request.user.id).values_list('id_followed').all() # TODO : recuperer un tableau d'ID a la place d'un QuerySet<>
 
-    list_user = User.objects.all()
+
+    list_user = User.objects.all() #Liste user contient la liste de tous les utilisateurs inscrits
+
 
     return render(request, 'PyBirdApp/index.html', {'nbpost': nbpost, 'nbfollower': nbfollower, 'nbfollowed': nbfollowed,
                                                     'list_user': list_user, 'listFollowed': listFollowed})
@@ -91,7 +93,7 @@ def followers(request, id_user):
     return render(request, 'PyBirdApp/followers.html', {'id_user': id_user, 'followers': userFollowers, 'this_user': user})
 
 def followeds(request, id_user):
-    userFollowers = Follow.objects.filter(id_followed=id_user).all()
+    userFollowers = Follow.objects.filter(id_follower=id_user).all()
     user = User.objects.filter(id=id_user)
     #recuperer les infos des mans a partir des id
     return render(request, 'PyBirdApp/followeds.html', {'id_user': id_user, 'followers': userFollowers, 'this_user': user})

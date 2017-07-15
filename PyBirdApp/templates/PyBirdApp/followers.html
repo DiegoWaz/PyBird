@@ -8,7 +8,7 @@
     {% endfor %}
     <ul>
         {% for uFollowers in followers %}
-        <li><a href="{% url 'profile' uFollowers.id %}">{{ uFollowers.id }}</a></li>
+        <li><a href="{% url 'profile' uFollowers.id_follower %}">{{ uFollowers.id_follower }}</a></li>
         {% endfor %}
     </ul>
 </div>

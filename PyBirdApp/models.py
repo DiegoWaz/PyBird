@@ -24,6 +24,3 @@ class Post(models.Model):
 class Follow(models.Model):
     id_follower = models.IntegerField()
     id_followed = models.IntegerField()
-
-    def __str__(self):
-        return self.id
