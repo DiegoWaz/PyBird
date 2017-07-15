@@ -1,1 +1,7 @@
 .DS_Store
+Vagrantfile
+.vagrant/
+_conf/
+ubuntu-xenial-16.04-cloudimg-console.log
+.idea/
+PyBirdApp/__pycache__/

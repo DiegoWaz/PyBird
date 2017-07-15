@@ -87,8 +87,8 @@
         <div class="sh-section">
             <div class="sh-section__head">
                 <table>
-        {% for user_all in list_user %}
-                    {% if request.user.username != user_all.username %}
+        {% for user_all in list_user %} <!--#boucle sur tous les utilisateurs-->
+                    {% if request.user.id != user_all.id %} <!--#request.user.id = id de l'internaute qui est sur la page != id de tous les utilisateur pour ne pas afficher son propre profil-->
                         <tr class="sh-suggest">
                             <td>
                                 <a href="{% url 'profile' user_all.id %}" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
@@ -96,14 +96,19 @@
                             <td>
                                 <a href="{% url 'profile' user_all.id %}" class="sh-section__name">{{ user_all.username }}</a>
                             </td>
-                            {% for userFollowed in listFollowed %}
-                                {% if userFollowed.id != user_all.id %}
-                                    <td>
-                                        {{ userFollowed.id }} && {{ user_all.id }}
-                                        <a href="{% url 'follow' user.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                            {% if user_all.id in listFollowed %} <!-- listFollowed = liste de tous les utilisateur le request.id suit (id -->
+                                     <td>
+                                       <!-- {{ userFollowed.id_follower }} && -->{{ user_all.id }} {{ listFollower.id }}
+                                        <a href="{% url 'follow' user_all.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
                                     </td>
-                                {% endif %}
-                            {% endfor %}
+                            {% else %}
+                             <td>
+                                 {% for u in listFollowed %}
+                                       {{ u.id }}
+                                 {% endfor %}
+                                        <a href="{% url 'follow' user_all.id %}" class="sh-head-user__btn-follow sh-btn">Unfollow</a>
+                                    </td>
+                             {% endif %}
                         </tr>
                     {% endif %}
         {% endfor %}
