@@ -5,3 +5,5 @@ _conf/
 ubuntu-xenial-16.04-cloudimg-console.log
 .idea/
 PyBirdApp/__pycache__/
+PyBird/__pycache__/
+PyBirdApp/migrations/__pycache__/
