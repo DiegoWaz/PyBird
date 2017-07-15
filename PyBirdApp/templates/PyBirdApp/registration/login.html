@@ -1,10 +1,23 @@
+{% extends "PyBirdApp/base.html" %}
 <title>{% block title %}Login{% endblock %}</title>
 
 {% block content %}
-<form method="post">
-{% csrf_token %}
-    <input type="text" name="username" placeholder="Utilisateur">
-    <input type="password" name="password" placeholder="Mot de passe">
-    <input type="submit" value="login" />
-</form>
+    <div class="sh-login">
+        <div class="sh-login__content">
+            <p>Login</p>
+            <div class="sh-login__form">
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" class="form-control" placeholder='Username' required>
+                    <div class="sh-input-copy">
+                        <input type="password" class="form-control" name="password" placeholder="Mot de passe" required>
+                    </div>
+                    <div class="sh-login__send">
+                        <a href="{% url 'signup' %}">Créer un compte?</a>
+                        <button type="submit" class="sh-btn">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

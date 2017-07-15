@@ -36,6 +36,8 @@
                 </h1>
                 <div class="sh-header__control">
                     <a href="#" class="sh-header__btn-notification sh-btn-icon"><i class="icon-Notification"></i></a>
+                </div>
+               <div class="sh-header__control">
                     <a href="#" class="sh-header__btn-comment sh-btn-icon"><i class="icon-Comment"></i></a>
                 </div>
                 <div class="sh-user">
@@ -83,13 +85,17 @@
                 </div>
                 <div class="sh-header__control">
                     <a href="{% url 'profile' user.id %}" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
+                </div>
+               <div class="sh-header__control">
                     <a href="#" class="sh-header__btn-upload sh-btn"><i class="icon-Comment"></i> Tweet</a>
+                </div>
+               <div class="sh-header__control">
                     <a href="{% url 'logout' %}" class="set-btn"><i class="icon-Comment"></i> Logout</a>
                 </div>
             </div>
         </div>
         {% else %}
-        
+
       <header>
         <div class="sh-header">
             <div class="container">
@@ -107,8 +113,10 @@
                     </form>
                 </div>
                 <div class="sh-header__control">
-                    <a href="{% url 'signup' %}" class=" sh-btn"><i class="icon-Comment"></i> Register</a>
-                    <a href="{% url 'login' %}" class="set-btn"><i class="icon-Comment"></i> Login</a>
+                    <a href="{% url 'signup' %}" class=" sh-btn"><i class="fa fa-registered"></i> Register</a>
+                </div>
+               <div class="sh-header__control">
+                    <a href="{% url 'login' %}" class="set-btn"><i class="fa fa-sign-in"></i> Login</a>
                 </div>
             </div>
         </div>

@@ -7936,10 +7936,15 @@ input.form-message {
 }
 .sh-login__form {
   margin-top: 36px;
+  text-align: left;
 }
 .sh-login__form form input {
   background-color: #f6f9fb;
   border-radius: 6px;
+}
+
+.sh-login__form p {
+    padding: 5px 0;
 }
 .sh-login__form form > input,
 .sh-login__form form .sh-input-copy {
@@ -8719,11 +8724,13 @@ input.form-message {
     width: 184px;
   }
 }
+
 @media only screen and (max-width: 1483px) {
   .sh-header__control {
-    width: calc(14px + 30px + 100px);
+    width: 5%;
   }
 }
+
 @media only screen and (max-width: 1210px) {
   .sh-header .sh-logo,
   .sh-header__btn-dropdown,
@@ -8833,4 +8840,10 @@ input.form-message {
 }
 .sh-footer__btn-add-image:hover i {
   color: #ffffff !important;
+}
+
+span.helptext {
+    display: block;
+    padding: 10px 0;
+    font-size: 12px;
 }

@@ -1,8 +1,19 @@
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-    <p>Already an account ? 
-                    <a href="{% url 'login' %}" class=" sh-btn"><i class="icon-Comment"></i> Log in</a></p>
-  </form>
+{% extends "PyBirdApp/base.html" %}
+
+{% block content %}
+<div class="sh-login">
+    <div class="sh-login__content">
+        <h1>Sign up</h1>
+        <div class="sh-login__form">
+            <form action="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="sh-login__send">
+                    <a href="#">Already have an account?</a>
+                    <button type="submit" class="sh-btn">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
