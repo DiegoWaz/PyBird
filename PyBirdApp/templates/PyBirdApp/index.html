@@ -11,11 +11,11 @@
 <!--sections-->
 <div class="row">
     <!--section-->
-    <div class="sh-section__item col-lg-3">
         {% if user.is_authenticated %}
+        <div class="sh-section__item col-lg-3">
         <div class="sh-section">
             <div class="sh-section__head">
-                <a href="single_post.html" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                <a href="{% url 'profile' user.id %}" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
                 <div>
                     <h2>
                         <a href="{% url 'profile' user.id %}" class="sh-section__name">{{ user }}</a>
@@ -37,58 +37,80 @@
                 </table>
             </div>
         </div>
-        {% endif %}
     </div>
 
+  <div class="sh-section__item col-lg-6">
+            {% for p in posts %}
+                    {% for userFollowed in listFollowed %}
+                        {% if userFollowed.id_followed == p.id_author.id %}
 
-    <div class="sh-section__item col-lg-6">
-        <div class="sh-section">
-            <div class="sh-section__head">
-                <a href="single_post.html" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
-                <div>
-                    <a href="#" class="sh-section__name">Diego</a>
-                    <span class="sh-section__passed">2 hours ago</span>
-                </div>
-            </div>
-            <div class="sh-section__content">
-                <p>Special beta pricing's almost over, don't miss out. Head to <a href="#">http://www.lemeilleurdupsg.com</a> to check it out & sign up. Don’t forget o subscribe.</p>
-                <div class="sh-section__image">
-                    <a href="single_post.html"><img src="{% static 'images/microphone-1209816_1920.jpg'%}" alt=""></a>
-                </div>
-            </div>
-            <div class="sh-section__footer">
-                <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
-                <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
-                <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
-            </div>
+                    <div class="sh-section">
+                        <div class="sh-section__head">
+                            <a href="{% url 'profile' p.id_author.id %}" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                            <div>
+                                <a href="{% url 'profile' p.id_author.id %}" class="sh-section__name">{{ p.id_author }}</a>
+                                <span class="sh-section__passed">{{ p.created_at|date:"M/d"|lower }}</span>
+                            </div>
+                            <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+                        </div>
+                        <div class="sh-section__content">
+                            <p>{{ p.post_content }}</p>
+                            <!--<div class="sh-section__image">
+                                <a href="single_post.html">
+                                    <img src="{% static 'images/microphone-1209816_1920.jpg'%}" alt="">
+                                </a>
+                            </div>-->
+                        </div>
+                        <div class="sh-section__footer">
+                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span><!--1,274--></span></a>
+                            <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span><!--982--></span></a>
+                            <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
+                        </div>
+                    </div>
+                    {% endif %}
+                 {% endfor %}
+             {% empty %}
+                <li>Sorry, no tweet avaiable... Start by follow some body?</li>
+            {% endfor %}
         </div>
-
-        <div class="sh-section">
-            <div class="sh-section__head">
-                <a href="#" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-03.png'%}" alt=""></a>
-                <div>
-                    <a href="#" class="sh-section__name">Robin</a>
-                    <span class="sh-section__passed">20 min ago</span>
-                </div>
-            </div>
-            <div class="sh-section__content">
-                <p>About 4,000 years ago:</br>God: I shall create a great plague and every living thing on Earth will die!</br>Fish: *Winks at God and slips him a $20 note*</br>God: Correction, I shall create a great flood!</p>
-            </div>
-            <div class="sh-section__footer">
-                <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span>1,274</span></a>
-                <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span>982</span></a>
-                <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
-            </div>
-        </div>
+    {% else %} <!-- Pour l'user non authentifié -->
+    <div class="sh-section__item col-lg-3">
     </div>
+                 <div class="sh-section__item col-lg-6">
+                {% for p in posts %}
+                        <div class="sh-section">
+                        <div class="sh-section__head">
+                            <a href="{% url 'profile' p.id_author.id %}" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                            <div>
+                                <a href="{% url 'profile' p.id_author.id %}" class="sh-section__name">{{ p.id_author }}</a>
+                                <span class="sh-section__passed">{{ p.created_at|date:"M/d"|lower }}</span>
+                            </div>
+                            <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+                        </div>
+                        <div class="sh-section__content">
+                            <p>{{ p.post_content }}</p>
+                            <!--<div class="sh-section__image">
+                                <a href="single_post.html">
+                                    <img src="{% static 'images/microphone-1209816_1920.jpg'%}" alt="">
+                                </a>
+                            </div>-->
+                        </div>
+                        <div class="sh-section__footer">
+                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span><!--1,274--></span></a>
+                            <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span><!--982--></span></a>
+                            <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
+                        </div>
+                    </div>
+    {% endfor %}
+    {% endif %}
 
     <div class="sh-section__item col-lg-3">
        <!-- {% if user.is_authenticated %} -->
         <div class="sh-section">
             <div class="sh-section__head">
                 <table>
-        {% for user_all in list_user %} <!--#boucle sur tous les utilisateurs-->
-                    {% if request.user.id != user_all.id %} <!--#request.user.id = id de l'internaute qui est sur la page != id de tous les utilisateur pour ne pas afficher son propre profil-->
+               {% for user_all in list_user %}
+                    {% if request.user.username != user_all.username %}
                         <tr class="sh-suggest">
                             <td>
                                 <a href="{% url 'profile' user_all.id %}" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
@@ -96,22 +118,18 @@
                             <td>
                                 <a href="{% url 'profile' user_all.id %}" class="sh-section__name">{{ user_all.username }}</a>
                             </td>
-                            {% if user_all.id in listFollowed %} <!-- listFollowed = liste de tous les utilisateur le request.id suit (id -->
-                                     <td>
-                                       <!-- {{ userFollowed.id_follower }} && -->{{ user_all.id }} {{ listFollower.id }}
-                                        <a href="{% url 'follow' user_all.id %}" class="sh-head-user__btn-follow sh-btn">Follow</a>
+                            {% for userFollowed in listFollowed %}
+                                {% if userFollowed.id_followed == user_all.id %}
+                                    <td>
+                                        <div class="sh-head-user__name">
+                                            <i><img src="{% static 'fonts/icons/sharehub/svg/Verified.svg'%}" alt=""></i>
+                                        </div>
                                     </td>
-                            {% else %}
-                             <td>
-                                 {% for u in listFollowed %}
-                                       {{ u.id }}
-                                 {% endfor %}
-                                        <a href="{% url 'follow' user_all.id %}" class="sh-head-user__btn-follow sh-btn">Unfollow</a>
-                                    </td>
-                             {% endif %}
+                                {% endif %}
+                            {% endfor %}
                         </tr>
                     {% endif %}
-        {% endfor %}
+            {% endfor %}
                 </table>
             </div>
         </div>

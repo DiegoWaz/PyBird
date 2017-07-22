@@ -46,21 +46,26 @@ def user_logout(request):
     return redirect('home')
 
 def home(request):
-    nbpost, nbfollower, nbfollowed, listFollowed = 0, 0, 0, 0
+    nbpost, nbfollower, nbfollowed, listFollowed, posts = 0,0, 0, 0, 0
 
 
     if(request.user.is_authenticated()):
         nbpost = Post.objects.filter(id_author=request.user.id).count()
         nbfollower = Follow.objects.filter(id_followed=request.user.id).count()
         nbfollowed = Follow.objects.filter(id_follower=request.user.id).count()
-        listFollowed = Follow.objects.filter(id_follower=request.user.id).values_list('id_followed').all() # TODO : recuperer un tableau d'ID a la place d'un QuerySet<>
+        listFollowed = Follow.objects.filter(id_follower=request.user.id).all() # TODO : recuperer un tableau d'ID a la place d'un QuerySet<>
 
+        if request.method == 'POST':
+            content = request.POST.get('content', False)
+            id_author = request.user
+            p = Post.objects.create(post_content=content, id_author=id_author)
+            p.save()
 
     list_user = User.objects.all() #Liste user contient la liste de tous les utilisateurs inscrits
-
+    posts = Post.objects.all()
 
     return render(request, 'PyBirdApp/index.html', {'nbpost': nbpost, 'nbfollower': nbfollower, 'nbfollowed': nbfollowed,
-                                                    'list_user': list_user, 'listFollowed': listFollowed})
+                                                    'list_user': list_user, 'listFollowed': listFollowed, 'posts' : posts})
 
 def settings(request):
     if not request.user.is_authenticated: #Si l'user n'est pas authentifié
@@ -74,13 +79,15 @@ def profile(request, id_user):
     nbfollower = Follow.objects.filter(id_followed=id_user).count()
     nbfollowed = Follow.objects.filter(id_follower=id_user).count()
     isFollowed = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).count()
+    post = Post.objects.filter(id_author=id_user).all()
 
     if not user:
         raise Http404 #Pour renvoyer une erreur 404
 
 
     return render(request, 'PyBirdApp/profile.html', {'id_user': id_user, 'this_user': user, 'nbpost': nbpost,
-                                                      'nbfollower': nbfollower, 'nbfollowed': nbfollowed, 'isFollowed': isFollowed})
+                                                      'nbfollower': nbfollower, 'nbfollowed': nbfollowed, 'isFollowed': isFollowed,
+                                                      'posts': post})
 
 
 def followers(request, id_user):
@@ -100,6 +107,14 @@ def followeds(request, id_user):
 
 
 def follow(request, id_user):
+    if (not request.user.is_authenticated()):
+        return redirect("signup") #Redirige l'user si il essaie de follow alors qu'il n'est pas connecté 
+
+    user = User.objects.filter(id=id_user)
+
+    if not user:
+        raise Http404 #Pour renvoyer une erreur 404
+
     follow = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).count()
 
     if follow == 0:
@@ -110,6 +125,7 @@ def follow(request, id_user):
         f = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user)
         f.delete()
 
-    return render(request, 'PyBirdApp/follow.html', {'id_user': id_user, 'follow': follow, 'request_id': request.user.id})
+    tmp = request.META['HTTP_REFERER']
+    return redirect(tmp)
 
 

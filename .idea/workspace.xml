@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e422842f-394a-4624-9343-fbef4f16d898" name="Default" comment="">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -30,6 +31,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ubuntu-xenial-16.04-cloudimg-console.log" afterPath="$PROJECT_DIR$/ubuntu-xenial-16.04-cloudimg-console.log" />
 >>>>>>> Stashed changes
 >>>>>>> 367434e84a8f80e1e534701234a635c186427f32
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ubuntu-xenial-16.04-cloudimg-console.log" afterPath="$PROJECT_DIR$/ubuntu-xenial-16.04-cloudimg-console.log" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -199,6 +204,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
       <find>sh-header__btn-upload</find>
@@ -231,6 +237,8 @@
       <find>% url</find>
       <find>save</find>
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
       <find>si</find>
       <find>single</find>
       <find>single_</find>
@@ -250,9 +258,23 @@
       <find>this_</find>
       <find>follow</find>
       <find>followers.</find>
+<<<<<<< Updated upstream
 =======
       <find>.sh-login__form</find>
 >>>>>>> feature/index
+=======
+      <find>Home</find>
+      <find>Utilis</find>
+      <find>Utilisat</find>
+      <find>Utilisate</find>
+      <find>Utilisateu</find>
+      <find>Utilisateur</find>
+      <find>Utilisateurs</find>
+      <find>Utilisateurs</find>
+      <find>Utilisateurs i</find>
+      <find>Utilisateurs ins</find>
+      <find>Utilisateurs in</find>
+>>>>>>> Stashed changes
     </findStrings>
     <replaceStrings>
       <replace />
@@ -617,8 +639,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="0" y="23" width="1280" height="731" extended-state="6" />
     <editor active="true" />
+=======
+    <frame x="-8" y="-8" width="1370" height="754" extended-state="0" />
+>>>>>>> Stashed changes
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

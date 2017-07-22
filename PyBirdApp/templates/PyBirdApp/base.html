@@ -92,9 +92,13 @@
                <div class="sh-header__control">
                     <a href="{% url 'logout' %}" class="set-btn"><i class="icon-Comment"></i> Logout</a>
                 </div>
-                <div class="sh-upload">
+                <div class="sh-upload"> <!-- TWEET HERE -->
                     <div class="sh-upload__head">
-                        <form action="#"><input type="text" class="form-control ttg-border-none" placeholder="Tweetez" /></form>
+                        <form method="post">
+                            <input type="text" class="form-control ttg-border-none" name="content" placeholder="Tweetez" />
+                            {% csrf_token %}
+                            <input type="submit">
+                        </form>
                     </div>
                     <div class="sh-upload__footer">
                         <a class="sh-header__btn-upload sh-btn" href="#">
