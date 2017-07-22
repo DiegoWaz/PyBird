@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from PyBirdApp import views
 from django.contrib.auth.views import logout
+from django.conf.urls import include
 
 
 urlpatterns = [
@@ -26,6 +27,7 @@ urlpatterns = [
     url(r'^login/$', views.user_login, name='login'),
     url(r'^logout/$', views.user_logout, name='logout'), #Page des que = id_user suit
 
+    url(r'^avatar/', include('avatar.urls')),
     url(r'^settings/$', views.settings, name='settings'),
 
     url(r'^profile/(\d+)$', views.profile, name='profile'), #Page des post arg = id_user

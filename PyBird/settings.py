@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'PyBirdApp',
-    'require'
-                  
+    'require',
+    'avatar',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +121,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AVATAR_STORAGE_DIR = 'static/images/avatars'
+
+AVATAR_GRAVATAR_DEFAULT = 'identicon'
+
+AVATAR_GRAVATAR_FORCEDEFAULT = True
+
+
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),

@@ -3,10 +3,17 @@
 {% load require %}
 {% block title %}PyBird | Profile {{ id_user }}{% endblock %}
 {% block content %}
+{% load avatar_tags %}
 
     <div class="sh-head-user">
         <div class="sh-head-user__content">
-            <div class="sh-head-user__image"><a href="#"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a></div>
+            <div class="sh-head-user__image">
+                <a href="{% url 'avatar_change' %}">
+                    {% for user in this_user %}
+                        {% avatar user.username %}
+                    {% endfor %}
+                </a>
+            </div>
             <div class="sh-head-user__info">
                 <div class="sh-head-user__info-head">
                     {% for user in this_user %}
@@ -51,7 +58,9 @@
             {% for p in posts %}
             <div class="sh-section">
                 <div class="sh-section__head">
-                    <a href="" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                    <a href="" class="sh-section__avatar sh-avatar">
+                        {% avatar p.id_author %}
+                    </a>
                     <div>
                         <a href="#" class="sh-section__name">{{ p.id_author }}</a>
                         <span class="sh-section__passed">{{ p.created_at|date:"M/d"|lower }}</span>

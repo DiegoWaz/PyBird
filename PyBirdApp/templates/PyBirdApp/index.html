@@ -1,6 +1,7 @@
 {% extends "PyBirdApp/base.html" %}
 {% load static %}
 {% block title %}PyBird | Home{% endblock %}
+{% load avatar_tags %}
 
 {% block content %}
 
@@ -15,7 +16,10 @@
         <div class="sh-section__item col-lg-3">
         <div class="sh-section">
             <div class="sh-section__head">
-                <a href="{% url 'profile' user.id %}" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                <a href="{% url 'profile' user.id %}" class="sh-section__avatar sh-avatar">
+                   <!-- <img src="{% static 'images/avatars/avatar-02.png'%}" alt=""> -->
+                    {% avatar user %}
+                </a>
                 <div>
                     <h2>
                         <a href="{% url 'profile' user.id %}" class="sh-section__name">{{ user }}</a>
@@ -46,7 +50,9 @@
 
                     <div class="sh-section">
                         <div class="sh-section__head">
-                            <a href="{% url 'profile' p.id_author.id %}" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                            <a href="{% url 'profile' p.id_author.id %}" class="sh-section__avatar sh-avatar">
+                                {% avatar p.id_author  %}
+                            </a>
                             <div>
                                 <a href="{% url 'profile' p.id_author.id %}" class="sh-section__name">{{ p.id_author }}</a>
                                 <span class="sh-section__passed">{{ p.created_at|date:"M/d"|lower }}</span>
@@ -80,7 +86,10 @@
                 {% for p in posts %}
                         <div class="sh-section">
                         <div class="sh-section__head">
-                            <a href="{% url 'profile' p.id_author.id %}" class="sh-section__avatar sh-avatar"><img src="{% static 'images/avatars/avatar-02.png'%}" alt=""></a>
+                            <a href="{% url 'profile' p.id_author.id %}" class="sh-section__avatar sh-avatar">
+                               <!-- <img src="{% static 'images/avatars/avatar-02.png'%}" alt=""> -->
+                                {% avatar p.id_author %}
+                            </a>
                             <div>
                                 <a href="{% url 'profile' p.id_author.id %}" class="sh-section__name">{{ p.id_author }}</a>
                                 <span class="sh-section__passed">{{ p.created_at|date:"M/d"|lower }}</span>
@@ -113,7 +122,10 @@
                     {% if request.user.username != user_all.username %}
                         <tr class="sh-suggest">
                             <td>
-                                <a href="{% url 'profile' user_all.id %}" class="sh-section__avatar2 sh-avatar"><img src="{% static 'images/avatars/avatar-09.png'%}" alt=""></a>
+                                <a href="{% url 'profile' user_all.id %}" class="sh-section__avatar2 sh-avatar">
+                                   <!-- <img src="{% static 'images/avatars/avatar-09.png'%}" alt=""> -->
+                                    {% avatar user_all.username %}
+                                </a>
                             </td>
                             <td>
                                 <a href="{% url 'profile' user_all.id %}" class="sh-section__name">{{ user_all.username }}</a>

@@ -1,5 +1,6 @@
 {% load static %}
 {% load require %}
+{% load avatar_tags %}
 <!doctype html>
 <html lang="fr">
 <head>
@@ -54,7 +55,9 @@
                             </div>
                         </div>
                         <div>
-                            <div><a href="#"><img src="{% static 'images/avatars/user-02.jpg' %}" alt=""></a></div>
+                            <div><a href="#">
+                                <img src="{% static 'images/avatars/user-02.jpg' %}" alt="">
+                            </a></div>
                             <div>
                                 <div>Life choices of my cat</div>
                                 <span>Earned <i class="icon-Upvote"></i> 210</span>
@@ -84,7 +87,9 @@
                     </form>
                 </div>
                 <div class="sh-header__control">
-                    <a href="{% url 'profile' user.id %}" class="sh-header__avatar sh-avatar"><img src="{% static 'images/avatars/user.jpg'%}" alt=""></a>
+                    <a href="{% url 'profile' user.id %}" class="sh-header__avatar sh-avatar">
+                        {% avatar user %}
+                    </a>
                 </div>
                <div class="sh-header__control">
                     <a href="#" class="sh-header__btn-upload sh-btn"><i class="icon-Comment"></i> Tweet</a>
