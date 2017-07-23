@@ -93,17 +93,26 @@ def profile(request, id_user):
 def followers(request, id_user):
     userFollowers = Follow.objects.filter(id_followed=id_user).all()
     user = User.objects.filter(id=id_user)
+    users = User.objects.all()
+    isFollowed = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).count()
 
     if not user:
         raise Http404 #Pour renvoyer une erreur 404
     #recuperer les infos des mans a partir des id
-    return render(request, 'PyBirdApp/followers.html', {'id_user': id_user, 'followers': userFollowers, 'this_user': user})
+    return render(request, 'PyBirdApp/followers.html', {'id_user': id_user, 'followers': userFollowers, 'this_user': user
+                                                        ,'users':users, 'isFollowed':isFollowed})
 
 def followeds(request, id_user):
     userFollowers = Follow.objects.filter(id_follower=id_user).all()
     user = User.objects.filter(id=id_user)
+    users = User.objects.all()
+    isFollowed = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).count()
+
+    if not user:
+        raise Http404 #Pour renvoyer une erreur 404
     #recuperer les infos des mans a partir des id
-    return render(request, 'PyBirdApp/followeds.html', {'id_user': id_user, 'followers': userFollowers, 'this_user': user})
+    return render(request, 'PyBirdApp/followeds.html', {'id_user': id_user, 'followers': userFollowers, 'this_user': user
+                                                        ,'users':users, 'isFollowed':isFollowed})
 
 
 def follow(request, id_user):
