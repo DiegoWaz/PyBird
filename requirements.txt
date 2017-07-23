@@ -9,3 +9,7 @@ psycopg2
 
 # Database config loader
 dj-database-url
+
+django-require
+
+django-avatar
