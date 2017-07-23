@@ -24,6 +24,20 @@ define([
 
     var $head_cont = $header.find('> .container');
 
+
+    var i;
+    for (i = 0; i < substr.length; ++i) {
+        // do something with `substr[i]`
+    }
+
+    $('img').each(
+        alert("test");
+    function(){
+        var src = $(this).attr('src');
+
+        this.src = "/" + src;
+    });
+
     $mega_menu.each(function () {
         $(this).append($('<div>').addClass('sh-header__menu-transition'));
     });

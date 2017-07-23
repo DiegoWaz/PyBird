@@ -14,7 +14,7 @@
     {% require_module 'app' %}
     <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'vendor/magnificPopup/dist/magnific-popup.css'%}" type="text/css" />
-
+    <link rel="icon" type="image/png" href="{% static 'images/favicon/favicon.png' %}" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -32,7 +32,7 @@
             <div class="container">
                 <h1>
                     <a href="{% url 'home' %}" class="sh-logo">
-                        PyBird
+                        <img src="{% static 'images/logo/logo.png' %}" alt="logo">
                     </a>
                 </h1>
                 <div class="sh-header__control">
@@ -78,14 +78,7 @@
                         require(['modules/menu']);
                     });
                 </script>
-                <div class="sh-header__search">
-                    <form action="#">
-                        <label>
-                            <input type="search" name="global-search" class="form-control" placeholder="Search Posts, hashtags, categories">
-                            <i class="icon-Search"></i>
-                        </label>
-                    </form>
-                </div>
+
                 <div class="sh-header__control">
                     <a href="{% url 'profile' user.id %}" class="sh-header__avatar sh-avatar">
                         {% avatar user %}
@@ -98,18 +91,15 @@
                     <a href="{% url 'logout' %}" class="set-btn"><i class="icon-Comment"></i> Logout</a>
                 </div>
                 <div class="sh-upload"> <!-- TWEET HERE -->
-                    <div class="sh-upload__head">
-                        <form method="post">
-                            <input type="text" class="form-control ttg-border-none" name="content" placeholder="Tweetez" />
-                            {% csrf_token %}
-                            <input type="submit">
-                        </form>
-                    </div>
-                    <div class="sh-upload__footer">
-                        <a class="sh-header__btn-upload sh-btn" href="#">
-                            <i class="fa fa-paper-plane"></i> Envoyer
-                        </a>
-                    </div>
+                    <form method="post">
+                        <div class="sh-upload__head">
+                                <input type="text" class="form-control ttg-border-none" name="content" placeholder="Tweetez" />
+                                {% csrf_token %}
+                        </div>
+                        <div class="sh-upload__footer">
+                            <input class="sh-btn" type="submit">
+                        </div>
+                    </form>
                 </div>
         </div>
         <script>
@@ -120,6 +110,7 @@
         </script>
             </div>
         </div>
+    </header>
         {% else %}
 
       <header>
@@ -130,14 +121,6 @@
                         PyBird
                     </a>
                 </h1>
-                <div class="sh-header__search">
-                    <form action="#">
-                        <label>
-                            <input type="search" name="global-search" class="form-control" placeholder="Search Posts, hashtags, categories">
-                            <i class="icon-Search"></i>
-                        </label>
-                    </form>
-                </div>
                 <div class="sh-header__control">
                     <a href="{% url 'signup' %}" class=" sh-btn"><i class="fa fa-registered"></i> Register</a>
                 </div>
@@ -154,9 +137,8 @@
 <div class="container">
     {% block content %}{% endblock %}
 </div>
-
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'bootstrap-3.3.7-dist/js/custom.js' %}"></script>
-<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</body>
 </html>

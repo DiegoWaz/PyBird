@@ -17,7 +17,6 @@
         <div class="sh-section">
             <div class="sh-section__head">
                 <a href="{% url 'profile' user.id %}" class="sh-section__avatar sh-avatar">
-                   <!-- <img src="{% static 'images/avatars/avatar-02.png'%}" alt=""> -->
                     {% avatar user %}
                 </a>
                 <div>
@@ -57,7 +56,6 @@
                                 <a href="{% url 'profile' p.id_author.id %}" class="sh-section__name">{{ p.id_author }}</a>
                                 <span class="sh-section__passed">{{ p.created_at|date:"M/d"|lower }}</span>
                             </div>
-                            <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                         </div>
                         <div class="sh-section__content">
                             <p>{{ p.post_content }}</p>
@@ -66,11 +64,6 @@
                                     <img src="{% static 'images/microphone-1209816_1920.jpg'%}" alt="">
                                 </a>
                             </div>-->
-                        </div>
-                        <div class="sh-section__footer">
-                            <a href="#" class="sh-section__btn-like sh-btn-icon"><i class="icon-Favorite_Full"></i><span><!--1,274--></span></a>
-                            <a href="#" class="sh-section__btn-comment sh-btn-icon"><i class="icon-Comment_Full"></i><span><!--982--></span></a>
-                            <a href="#" class="sh-section__btn-share sh-btn-icon"><i class="icon-Share"></i></a>
                         </div>
                     </div>
                     {% endif %}

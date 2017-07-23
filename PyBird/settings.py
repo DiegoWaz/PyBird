@@ -129,7 +129,6 @@ AVATAR_GRAVATAR_DEFAULT = 'identicon'
 AVATAR_GRAVATAR_FORCEDEFAULT = True
 
 
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
