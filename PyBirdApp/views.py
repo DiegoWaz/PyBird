@@ -62,7 +62,7 @@ def home(request):
             p.save()
 
     list_user = User.objects.all() #Liste user contient la liste de tous les utilisateurs inscrits
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('-id').all()
 
     return render(request, 'PyBirdApp/index.html', {'nbpost': nbpost, 'nbfollower': nbfollower, 'nbfollowed': nbfollowed,
                                                     'list_user': list_user, 'listFollowed': listFollowed, 'posts' : posts})
@@ -79,7 +79,7 @@ def profile(request, id_user):
     nbfollower = Follow.objects.filter(id_followed=id_user).count()
     nbfollowed = Follow.objects.filter(id_follower=id_user).count()
     isFollowed = Follow.objects.filter(id_follower=request.user.id, id_followed=id_user).count()
-    post = Post.objects.filter(id_author=id_user).all()
+    post = Post.objects.order_by('-id').filter(id_author=id_user).all()
 
     if not user:
         raise Http404 #Pour renvoyer une erreur 404
