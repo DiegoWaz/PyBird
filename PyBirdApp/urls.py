@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from PyBirdApp import views
-from django.contrib.auth.views import logout
+from django.contrib.auth import logout
 from django.conf.urls import include
 
 

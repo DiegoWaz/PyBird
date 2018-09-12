@@ -16,7 +16,7 @@ class Post(models.Model):
     post_content = models.CharField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="created")
     updated_at = models.DateTimeField(auto_now_add=True, auto_now=False, verbose_name="updated")
-    id_author = models.ForeignKey(User)
+    id_author = models.ForeignKey(User, on_delete=models.CASCADE,)
 
     def __str__(self):
         return self.id

@@ -116,3 +116,4 @@ We are using an sqlite3 database. Follow this command to explore database :
     .quit
 
 
+# django-hearthstone

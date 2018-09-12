@@ -49,7 +49,7 @@ def home(request):
     nbpost, nbfollower, nbfollowed, listFollowed, posts = 0,0, 0, 0, 0
 
 
-    if(request.user.is_authenticated()):
+    if request.user.is_authenticated:
         nbpost = Post.objects.filter(id_author=request.user.id).count()
         nbfollower = Follow.objects.filter(id_followed=request.user.id).count()
         nbfollowed = Follow.objects.filter(id_follower=request.user.id).count()
@@ -116,7 +116,7 @@ def followeds(request, id_user):
 
 
 def follow(request, id_user):
-    if (not request.user.is_authenticated()):
+    if not request.user.is_authenticated:
         return redirect("signup") #Redirige l'user si il essaie de follow alors qu'il n'est pas connecté 
 
     user = User.objects.filter(id=id_user)

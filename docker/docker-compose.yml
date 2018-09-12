@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+
+# ------> django ------>
+    django_9hl6dlwjlvynarj:
+        container_name: django_9hl6dlwjlvynarj
+        build: ./django
+        restart: always
+        volumes:
+            - ../:/app
+        ports:
+            - 8000:8000
+        depends_on:
+            - postgres_9hl6dlwjlvynark
+        command: ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# <------ django <------

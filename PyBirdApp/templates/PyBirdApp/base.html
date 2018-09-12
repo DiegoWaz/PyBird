@@ -116,16 +116,18 @@
       <header>
         <div class="sh-header">
             <div class="container">
-                <h1>
-                    <a href="{% url 'home' %}" class="sh-logo">
-                        <img src="{% static 'images/logo/logo.png' %}" alt="logo">
-                    </a>
-                </h1>
-                <div class="sh-header__control">
-                    <a href="{% url 'signup' %}" class=" sh-btn"><i class="fa fa-registered"></i> Register</a>
-                </div>
-               <div class="sh-header__control">
-                    <a href="{% url 'login' %}" class="set-btn"><i class="fa fa-sign-in"></i> Login</a>
+                <div class="row">
+                        <h1>
+                                <a href="{% url 'home' %}" class="sh-logo">
+                                    <img src="{% static 'images/logo/logo.png' %}" alt="logo">
+                                </a>
+                            </h1>
+                            <div class="sh-header__control">
+                                <a href="{% url 'signup' %}" class=" sh-btn"><i class="fa fa-registered"></i> Register</a>
+                            </div>
+                           <div class="sh-header__control">
+                                <a href="{% url 'login' %}" class="set-btn"><i class="fa fa-sign-in"></i> Login</a>
+                            </div>
                 </div>
             </div>
         </div>
